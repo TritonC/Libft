@@ -6,23 +6,31 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:01:07 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/16 16:01:07 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/17 17:46:41 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *str, int ch)
+#include "libft.h"
+
+char	*ft_strchr(const char *str, int ch)
 {
-    while (*str)
-    {
-        if (*str == ch)
-            return ((unsigned char *) str);
-        str++;
-    }
-    return ('\0');
+	int	len;
+
+	len = ft_strlen(str);
+	if (ch == 0)
+		return ((char *)str + (char)len);
+	while (*str)
+	{
+		if (*str == (char)ch)
+			return ((char *)str);
+		str++;
+	}
+	return (0);
 }
 /*
 #include <stdio.h>
 int main()
 {
-    printf("%s", ft_strchr("prueba . esto deberia salir ", '2'));
+	char	s[] = {0, 1, 2, 3, 4, 5};
+    printf("%s", ft_strchr(2));
 }*/

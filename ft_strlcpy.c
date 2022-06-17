@@ -6,26 +6,27 @@
 /*   By: mluis-fu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 16:14:10 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/05/26 12:40:13 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:21:30 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stddef.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
-	int				length;
+	size_t	i;
+	size_t	length;
 
 	i = 0;
 	length = 0;
-	while (src[length])
+	while (((unsigned char *)src)[length])
 		length++;
 	if (size > 0)
 	{
-		while (src[i] && (i < (size - 1)))
+		while (((unsigned char *)src)[i] && (i < (size - 1)))
 		{
-			dest[i] = src[i];
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	dest[i] = '\0';

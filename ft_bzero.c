@@ -6,7 +6,7 @@
 /*   By: mluis-fu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 14:49:23 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/15 15:19:57 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:32:55 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_bzero(void *str, size_t size)
 
 	copy = str;
 	count = 0;
-	while (copy[count] && count < size)
+	while (count < size)
 	{
 		copy[count] = '\0';
 		count++;

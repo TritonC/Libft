@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:26:49 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/16 17:26:49 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/17 18:04:29 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 #include <string.h>
 #include <stddef.h>
 
-int ft_memcmp(const void *str1, const void *str2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-    size_t count;
+	size_t	count;
 
-    count = 0;
-    while (count++ < n)
-    {
-        if (((unsigned char *)str1)[count] != ((unsigned char *) str2)[count])
-            return (((unsigned char *)str1)[count] - ((unsigned char *) str2)[count]);
-    }
-    return (0);
+	count = 0;
+	while (count < n)
+	{
+		if (((unsigned char *)str1)[count] != ((unsigned char *) str2)[count])
+			return (((unsigned char *)str1)[count]
+					- ((unsigned char *) str2)[count]);
+		count++;
+	}
+	return (0);
 }
 /*
 int main()

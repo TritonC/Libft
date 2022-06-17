@@ -6,15 +6,15 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:49:00 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/16 15:49:00 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/17 17:58:01 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int n)
+int	ft_toupper(int n)
 {
 	if (n >= 'a' && n <= 'z')
 		n -= 32;
-	return (n);	
+	return (n);
 }
 /*
 #include <stdio.h>

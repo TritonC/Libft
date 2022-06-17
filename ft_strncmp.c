@@ -6,21 +6,23 @@
 /*   By: mluis-fu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:16:30 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/05/29 01:05:47 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:44:51 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <stddef.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	count;
+	size_t	count;
 
 	count = 0;
 	if (n == 0)
 		return (0);
-	while (s1[count] || s2[count])
+	while (((char *)s1)[count] || ((char *)s2)[count])
 	{
-		if (n > count && (s1[count] != s2[count]))
-			return (s1[count] - s2[count]);
+		if (n > count && (((char *)s1)[count] != ((char *)s2)[count]))
+			return (((char *)s1)[count] - ((char *)s2)[count]);
 		count++;
 	}
 	return (0);

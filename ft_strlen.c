@@ -6,7 +6,7 @@
 /*   By: mluis-fu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:53:29 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/17 12:55:47 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:21:11 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(const char *str)
 	int	count;
 
 	count = 0;
-	while (str[count])
+	while (((unsigned char *)str)[count])
 	{
 		count++;
 	}
