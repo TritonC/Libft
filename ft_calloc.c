@@ -14,10 +14,10 @@
 
 void *calloc(size_t n, size_t size)
 {
-	void    *ptr;
-	ptr = malloc(n * size);
-	if (ptr == NULL)
-		return (ptr);
-	ft_bzero(ptr, size * n);
-	return (ptr);
+	void    *aux;
+	aux = malloc(n * size);
+	if (aux == NULL)
+		return (aux);
+	ft_bzero(aux, size * n);
+	return (aux);
 }
