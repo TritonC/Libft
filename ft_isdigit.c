@@ -6,11 +6,11 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 12:54:05 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/15 14:35:47 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:49:51 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static	int	ft_isdigit(int n)
+int	ft_isdigit(int n)
 {
 	int	value;
 

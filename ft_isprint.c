@@ -6,11 +6,11 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:16:18 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/15 14:41:26 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:53:56 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isprint(char n)
+int	ft_isprint(int n)
 {
 	return ((n >= 32 && n <= 126));
 }

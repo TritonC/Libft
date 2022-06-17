@@ -6,11 +6,11 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:03:31 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/15 14:40:56 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:50:57 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isalnum(char n)
+int	ft_isalnum(int n)
 {
 	int	value;
 

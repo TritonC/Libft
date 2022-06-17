@@ -6,13 +6,13 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:48:31 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/15 13:27:52 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:52:58 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isascii(int i)
+int	ft_isascii(int n)
 {
-	return ((i >= 0 && i <= 127));
+	return ((n >= 0 && n <= 127));
 }
 /*
 #include <stdio.h>
