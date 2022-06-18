@@ -13,10 +13,10 @@
 #include "libft.h"
 static char ft_isspace(char *str) 
 {                   //copy of the isspace function to remove spaces
-    size_t i;
-    
-    i = 0;
-    while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	size_t i;
+	
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	i++;
 }
 
