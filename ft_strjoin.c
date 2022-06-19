@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 23:19:15 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/17 23:19:15 by marvin           ###   ########.fr       */
+/*   Created: 2022/06/18 15:38:54 by marvin            #+#    #+#             */
+/*   Updated: 2022/06/18 15:38:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void *calloc(size_t n, size_t size)
+char *ft_strjoin(char const *dest, char const *src)
 {
-	void	*aux;
-	aux = malloc(n * size);
-	if (aux == NULL)
-		return (aux);
-	ft_bzero(aux, size * n);
+	size_t	i;
+	size_t j;
+	char *aux;
+
+	i = 0;
+	j = 0;
+	j = ft_strlen(dest);
+	aux = (char *)malloc(sizeof(char) * (j + 1));
+	if (!aux)
+		return(NULL);
+	aux = dest;
+	while (src[j])
+	{
+		((char *)aux)[i] = ((char* )src)[j];
+		i++;
+		j++;
+	}
+	((char *)aux)[i] = '\0';
 	return (aux);
 }

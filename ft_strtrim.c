@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 23:19:15 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/17 23:19:15 by marvin           ###   ########.fr       */
+/*   Created: 2022/06/18 15:55:01 by marvin            #+#    #+#             */
+/*   Updated: 2022/06/18 15:55:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void *calloc(size_t n, size_t size)
-{
-	void	*aux;
-	aux = malloc(n * size);
-	if (aux == NULL)
-		return (aux);
-	ft_bzero(aux, size * n);
-	return (aux);
+static char ft_isspace(char *str) 
+{                   //copy of the isspace function to remove spaces
+	size_t i;
+	
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	i++;
 }
+
+char *ft_strtrim(char const *s1, char const *set)
