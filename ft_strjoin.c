@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:38:54 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/20 11:00:45 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/20 18:05:31 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@ char	*ft_strjoin(char const *dest, char const *src)
 	size_t	i;
 	size_t	j;
 	char	*aux;
+	size_t	len;
 
 	i = 0;
 	j = 0;
-	j = ft_strlen(dest);
-	aux = (char *)malloc(sizeof(char) * (j + 1));
+	len = ft_strlen(dest);
+	aux = (char *)malloc(sizeof(char) * (len + 1));
 	if (!aux)
 		return (NULL);
-	aux = (char *)dest;
+	while (dest[i])
+	{
+		aux[i] = dest[i];
+		i++;
+	}
 	while (src[j])
 	{
-		((char *)aux)[i] = ((char *)src)[j];
-		i++;
+		aux[i + j] = src[j];
 		j++;
 	}
-	((char *)aux)[i] = '\0';
+	aux[i + j] = '\0';
 	return (aux);
 }

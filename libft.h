@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:58:17 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/20 15:26:45 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/20 18:02:09 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int			ft_atoi(const char *str);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strdup(const char *str);
 void		*ft_calloc(size_t n, size_t size);
-char		*ft_strjoin(char const *dest, char const *src);
+char		*ft_strjoin(char const *dest, const char *src);
 char		*ft_substr(char const *str, unsigned int start, size_t len);
 
 #endif
