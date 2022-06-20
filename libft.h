@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mluis-fu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:58:17 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/17 17:58:47 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:09:14 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <string.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int n);
 int		ft_isdigit(int n);
@@ -38,8 +39,9 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*strdup(const char *str);
-void	*calloc(size_t n, size_t size);
+char	*ft_strdup(const char *str);
+void	*ft_calloc(size_t n, size_t size);
 char	*ft_strjoin(char const *dest, char const *src);
+char	*ft_substr(char const *str, unsigned int start, size_t len);
 
 #endif
