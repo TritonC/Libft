@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:13:33 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/20 15:24:49 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:05:43 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,14 @@ int	ft_atoi(const char *str)
 	copy = ft_isspace((char *)str);
 	copy = ft_sign(copy, &sign);
 	j = ft_nbr(copy);
+	if (j > 9223372036854775807 && sign == 1)
+		return (-1);
+	else if (j > 9223372036854775807 && sign == -1)
+		return (0);
 	return (j * sign);
 }
 /*
 int	main(void)
 {
-	printf("%d", ft_atoi("   -1"));
+	printf("%d", ft_atoi("2147483649"));
 }*/
