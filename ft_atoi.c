@@ -3,43 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mluis-fu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:13:33 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/17 18:06:22 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:24:49 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+static unsigned long int	ft_nbr(char *str)
+{
+	unsigned long int	j;
+	int					i;
+
+	j = 0;
+	i = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		j = (str[i] - 48) + (j * 10);
+		i++;
+	}
+	return (j);
+}
+
+static char	*ft_isspace(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	return (&str[i]);
+}
+
+static void	*ft_sign(char *str, int *sign)
+{
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
+	{
+		*sign *= -1;
+		str++;
+	}
+	return (str);
+}
+
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		j;
-	int		sign;
-	char	*copy;
+	int						sign;
+	char					*copy;
+	unsigned long int		j;
 
-	copy = (char *)str;
-	i = 0;
-	j = 0;
 	sign = 1;
-	while (copy[i] == 32 || (copy[i] >= 9 && copy[i] <= 13))
-		i++;
-	if (copy[i] == '+')
-		i++;
-	else if (copy[i] == '-')
-	{
-		sign *= -1;
-		i++;
-	}
-	while (copy[i] >= '0' && copy[i] <= '9')
-	{
-		j = (copy[i] - 48) + (j * 10);
-		i++;
-	}
+	copy = ft_isspace((char *)str);
+	copy = ft_sign(copy, &sign);
+	j = ft_nbr(copy);
 	return (j * sign);
 }
 /*
-#include <stdio.h>
-int main(void)
+int	main(void)
 {
-	printf("%d", ft_atoi("   +1"));
+	printf("%d", ft_atoi("   -1"));
 }*/

@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 23:19:15 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/20 11:06:13 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/20 12:12:04 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	*ft_calloc(size_t n, size_t size)
 	size_t	sum;
 
 	sum = size * n;
-	if (!sum || (sum < n && sum < size))
+	if (sum < n && sum < size)
 		return (NULL);
 	aux = malloc(n * size);
-	if (aux == NULL)
-		return (aux);
-	ft_bzero(aux, (size * n));
+	if (aux == (void *)0)
+		return (NULL);
+	ft_bzero(aux, sum);
 	return (aux);
 }
