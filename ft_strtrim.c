@@ -6,24 +6,24 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:55:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/20 18:38:54 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:15:16 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *str, char const *set)
 {
 	size_t		s1len;
 	char		*aux;
 
-	if (s1 == 0 || set == 0)
+	if (str == 0 || set == 0)
 		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	s1len = ft_strlen(s1);
-	while (s1len && ft_strchr(set, s1[s1len]))
+	while (*str && ft_strchr(set, *str))
+		str++;
+	s1len = ft_strlen(str);
+	while (s1len && ft_strchr(set, str[s1len]))
 		s1len--;
-	aux = ft_substr((char*)s1, 0, s1len + 1);
+	aux = ft_substr((char *)str, 0, s1len + 1);
 	return (aux);
 }
