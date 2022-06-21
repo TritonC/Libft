@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:53:41 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/21 19:46:21 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/21 19:52:04 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ char	**ft_split(const char *str, char delimiter)
 	//funcion delim
 	str1 = ft_skip_delim(str, delimiter);
 	len_word = ft_num_char_word(str1, delimiter);
+	word = (char *)malloc (sizeof(char) len_word + 1);
 	split = (char **)malloc((index + 2) * sizeof(char *));
 	//revisar la asignacion del malloc
 	return (split);
