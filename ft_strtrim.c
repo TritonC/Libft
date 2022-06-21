@@ -12,46 +12,18 @@
 
 #include "libft.h"
 
-static char	*ft_strstr(char *str, char *to_find)
-{
-	int	count;
-	int	count_src;
-	int	limit;
-
-	count_src = 0;
-	count = 0;
-	limit = 0;
-	while (to_find[limit])
-		limit++;
-	if (limit == '\0')
-		return (str);
-	while (str[count])
-	{
-		if (str[count] == to_find[count_src])
-			count_src++;
-		else if (str[count] != to_find[count_src])
-			count_src = 0;
-		if (count_src == limit)
-			return (&str[count - (limit - 1)]);
-		count++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	size_t	i;
-	char	*aux;
-	int		j;
+	size_t		s1len;
+	char		*aux;
 
-	j = 0;
-	len = ft_strlen(s1);
-	aux = (char *)malloc(sizeof(char) * (len + 1));
-	i = 0;
-
-	if (ft_strstr(s1, set))
-	{
-	}
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	s1len = ft_strlen(s1);
+	while (s1len && ft_strchr(set, s1[s1len]))
+		s1len--;
+	aux = ft_substr((char*)s1, 0, s1len + 1);
 	return (aux);
 }
