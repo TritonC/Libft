@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:53:41 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/22 14:55:15 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:44:52 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //function to calculate the size of the string, without the delimiters
 // to allocate size
 
-size_t	static	str_size(const char *str, char delimiter)
+size_t	static	str_index_size(const char *str, char delimiter)
 {
 	size_t	len;
 	size_t	word;
@@ -37,7 +37,7 @@ size_t	static	str_size(const char *str, char delimiter)
 }
 //function to calculate the size of the len in substr
 
-static size_t	size_str_index(const char *str, char delimiter, int len)
+static size_t	size_words(const char *str, char delimiter, int len)
 {
 	size_t	size;
 
@@ -45,96 +45,43 @@ static size_t	size_str_index(const char *str, char delimiter, int len)
 	while (str[len] != delimiter && str[len])
 	{
 		size++;
-	len++;
+		len++;
 	}
 	return (size);
 }
 
+static void	ft_free(char **str, int index)
+{
+	while (index-- > 0)
+		free(str[index]);
+	free(str);
+}
+
 char	**ft_split(const char *str, char delimiter)
 {
-	size_t	len;
-	size_t	index;
 	char	**split;
+	size_t	index;
+	size_t	size_copy;
 	size_t	count;
-	size_t	len_word;
+	size_t	len_str;
 
-	index = 0;
-	len = -1;
+	size_copy = 0;
+	index = -1;
 	count = 0;
-	len_word = str_size(str, delimiter);
-	split = (char **)malloc (sizeof(char *) * (len_word + 1));
+	len_str = str_index_size(str, delimiter);
+	split = (char **)malloc (sizeof(char *) * (len_str + 1));
 	if (!split)
 		return (NULL);
-	while (str[++len] < len_word)
+	while (++index < len_str)
 	{
 		while (str[count] == delimiter)
 			count++;
-		index = size_str_index(str, delimiter, count);
-		split[len] = ft_substr(str, count, index);
-		if (!split[len])
+		size_copy = size_words(str, delimiter, count);
+		split[index] = ft_substr(str, count, size_copy);
+		if (!split[index])
 			return (NULL);
-		len += index;
+		count += size_copy;
 	}
-	split[len] = 0;
+	split[index] = 0;
 	return (split);
 }
-/*
-int	main(void)
-{
-	//char	*str = "      split       this for   me  !";
-	//char	**result = ft_split(str, ' ');
-	char	**r = ft_split(",,,,,a,,,,,,,", ',');
-	
-	//int i = -1;
-	//while (r[++i])
-		printf("%s\n", r[0]);
-	//free(r);
-}
-*/
-/*
-size_t	len;
-	size_t	ini;
-	size_t	pos;
-	size_t	index;
-	char	**split;
-
-	index = 0;
-	len = -1;
-	pos = -1;
-	ini = 0;
-
-	if (*str == '\0')
-		return (NULL);
-	while (str[++len])
-		if (str[len] == delimiter && str[len + 1] != delimiter)
-			index++;
-	len = 0;
-	while (str[len] == delimiter)
-	{
-		len++;
-		ini++;
-		pos++;
-	}
-	len--;
-	split = malloc((index + 2) * sizeof(char *));
-	//revisar la asignacion del malloc
-	index = 0;
-	while (str[++len] || len == ft_strlen(str))
-	{
-		if ((len && len == pos) || (str[len - 1] == delimiter && str[len] == delimiter))
-		{
-			ini++;
-			pos++;
-		}
-		else if ((str[len - 1] != delimiter && str[len] == delimiter) || len == ft_strlen(str))
-		{
-			split[index++] = ft_strdup(ft_substr((char *)str, ini, (len - pos) - 1));
-			ini = len + 1;
-			pos = len;
-		}
-		//else if (str[len - 1] != delimiter && str[len] == delimiter)
-
-	}
-	split[index] = NULL;
-	return (split);
-*/
