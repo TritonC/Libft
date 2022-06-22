@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:15:17 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/20 17:23:15 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:35:10 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	slen = ft_strlen(str);
 	if (start > slen)
 		return (ft_strdup(""));
-	aux = (char *)malloc(sizeof(char) * len + 1);
+	aux = (char *)malloc(sizeof(char) * (len + 1));
 	if (!aux)
 		return (NULL);
 	while (i < len)

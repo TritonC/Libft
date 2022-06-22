@@ -6,48 +6,44 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:53:41 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/21 19:52:04 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:35:08 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*char	**ft_strncpy(char *dest, char *src, size_t n)
-{
-	unsigned int	count;
-
-	count = 0;
-	while (src[count] && count < n)
-	{
-		dest[count] = src[count];
-		count++;
-	}
-	while (count < n)
-	{
-		dest[count] = '\0';
-		count++;
-	}
-	return (dest);
-}
-*/
-char	*ft_skip_delim(const char *str, char delimiter)
+//function to calculate the size of the string, without the delimiters to allocate size
+size_t	static	str_size(const char *str, char delimiter)
 {
 	size_t	len;
+	size_t	word;
 
-	len = -1;
-	while (str[++len] == delimiter)
-		;
-	return ((char *)str + len);
+	word = 0;
+	len = 0;
+	while(str && str[len])
+	{
+		if(str[len] != delimiter)
+		{
+			word++;
+			while (str[len] != delimiter && str[len])
+				len++;
+			else
+				len++;
+		}
+	}
+	return (word);
 }
-
-size_t	ft_num_char_word(const char *str, const char delimiter)
+//function to calculate the size of the len in substr
+static size_t	size_str_index(const char *str, char delimiter, int len)
 {
-	size_t	i;
+	size_t	size;
 
-	i = -1;
-	while (str[++i] == delimiter && str[i])
-		;
-	return (i);
+	size = 0;
+	while (str[i] != delimiter && str[i])
+	{
+		size++;
+		i++;
+	}
+	return (size);
 }
 
 char	**ft_split(const char *str, char delimiter)
@@ -60,13 +56,11 @@ char	**ft_split(const char *str, char delimiter)
 
 	index = 0;
 	len = -1;
-	while (str[++len])
-		if (str[len] == delimiter && str[len + 1] != delimiter)
-			index++;
 	len = 0;
-	//funcion delim
-	str1 = ft_skip_delim(str, delimiter);
-	len_word = ft_num_char_word(str1, delimiter);
+
+	len_word = str_size(str, delimiter);
+	if (!split1 = (char **)malloc (sizeof(char *) * (len_word + 1));
+		return (NULL);
 	word = (char *)malloc (sizeof(char) len_word + 1);
 	split = (char **)malloc((index + 2) * sizeof(char *));
 	//revisar la asignacion del malloc
