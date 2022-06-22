@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:53:41 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/22 15:44:52 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:09:24 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ static size_t	size_words(const char *str, char delimiter, int len)
 		len++;
 	}
 	return (size);
-}
-
-static void	ft_free(char **str, int index)
-{
-	while (index-- > 0)
-		free(str[index]);
-	free(str);
 }
 
 char	**ft_split(const char *str, char delimiter)

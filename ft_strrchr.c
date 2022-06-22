@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:13:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/20 12:55:16 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/22 17:13:36 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ char	*ft_strrchr(const char *str, int ch)
 {
 	int	i;
 
-	i = ft_strlen(str);
-	while (i >= 0)
+	i = ft_strlen(str) + 1;
+	while (--i >= 0)
 	{
-		if (str[i] == ch)
+		if (str[i] == (char)ch)
 			return (&((char *)str)[i]);
-		i--;
 	}
 	return (0);
 }
