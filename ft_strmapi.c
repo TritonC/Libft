@@ -19,20 +19,25 @@ static char	*dinamic_str(size_t size)
 
 	count = 0;
 	str = (char *)malloc(sizeof(char) * (size + 1));
-	while (--size)
+	if (!str)
+		return (NULL);
+	while (size >= 0)
+	{
 		str[size] = '\0';
+		size--;
+	}
 	return (str);
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	slen;
 	char	*str;
 	int		count;
 
 	count = 0;
-	slen = ft_strlen(s);
-	str = dinamic_str(slen);
+	if (!s || !f)
+		return (NULL);
+	str = dinamic_str(ft_strlen(s));
 	if (!str)
 		return (NULL);
 	while(s[count])
