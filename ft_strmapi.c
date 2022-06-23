@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static char *dinamic_str(size_t size)
+static char	*dinamic_str(size_t size)
 {
-	char    *str;
+	char	*str;
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
@@ -25,10 +25,11 @@ static char *dinamic_str(size_t size)
 	}
 	return (str);
 }
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char    *str;
-	int     count;
+	char	*str;
+	int		count;
 
 	count = 0;
 	if (!s || !f)
