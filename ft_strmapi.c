@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:46:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/23 15:46:55 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/24 11:01:59 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,34 @@
 
 static char	*dinamic_str(size_t size)
 {
+	int		count;
 	char	*str;
+
+	count = 0;
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
-	while (size >= 0)
-	{
-		str[(int) size] = '\0';
-		size--;
-	}
+	while (--size)
+		str[size] = '\0';
 	return (str);
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	size_t	slen;
 	char	*str;
 	int		count;
 
-	count = 0;
 	if (!s || !f)
 		return (NULL);
-	str = dinamic_str(ft_strlen(s));
+	count = 0;
+	slen = ft_strlen(s);
+	str = dinamic_str(slen);
 	if (!str)
 		return (NULL);
-	while(s[count])
+	if (!str)
+		return (NULL);
+	while (s[count])
 	{
 		str[count] = f(count, s[count]);
 		count++;
