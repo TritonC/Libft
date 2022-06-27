@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 17:02:12 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/27 13:07:06 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:21:59 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*alt;
 
-	alt = (t_list *)malloc(sizeof(*alt));
+	alt = (t_list *)malloc(sizeof(t_list));
 	if (!alt)
 		return (NULL);
 	alt->content = content;
