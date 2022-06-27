@@ -64,6 +64,7 @@ fclean: clean
 re: fclean all
 
 bonus: $(NAME) $(OBJECTS_BONUS)
-	ar -rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	ar -rc $(NAME) $(OBJECTS_BONUS)
+	ranlib $(NAME)
 
-.PHONY:	all clean fclean re bonus
+.PHONY:	fclean all bonus
