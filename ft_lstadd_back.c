@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 22:22:17 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/27 13:07:09 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:09:49 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*first;
 
-	if (new == NULL || alst == NULL)
+	if (new == NULL || lst == NULL)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
