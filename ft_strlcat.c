@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 01:12:30 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:52 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:41:03 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	destlen = ft_strlen(dest);
 	if (size == 0)
 		return (srclen);
+	if (destlen > size)
+		return (srclen + size);
 	while (((unsigned char *)src)[i] && destlen + i < (size - 1))
 	{
 		dest[i + destlen] = ((unsigned char *)src)[i];
@@ -30,18 +32,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	if (i < size)
 		dest[destlen + i] = '\0';
-	if (destlen > size)
-		return (srclen + size);
 	return (destlen + srclen);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char cadena[20] = "manuel  fu";
-	char cadena2[20] = "anai8";
-	printf("%u\n", ft_strlcat(cadena, cadena2, 4));
-	//printf("%lu", strlcat(cadena, cadena2, 8));
-}*/

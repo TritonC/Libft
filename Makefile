@@ -52,17 +52,18 @@ OBJECTS_BONUS = $(BONUS:.c=.o);
 all: $(NAME)
 
 $(NAME):
-	@gcc -c $(FUNCTIONS)
-	@ar -rc $(NAME) $(OBJECTS)
+	gcc -c $(FUNCTIONS)
+	ar -rc $(NAME) $(OBJECTS)
 
 clean:
-	@rm -f $(OBJECTS) $(OBJECTS_BONUS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
-	@rm -f $(NAME) $(OBJECTS_BONUS)
+	rm -f $(NAME) $(OBJECTS_BONUS)
 
-re: fclean $(NAME)
+re: fclean all
 
-bonus: $(NAME) $(OBJECTS_BONUS) libft.h
+bonus: $(NAME) $(OBJECTS_BONUS)
+	ar rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
 
 .PHONY:	all clean fclean re bonus
