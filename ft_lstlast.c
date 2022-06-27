@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 17:02:12 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/27 13:07:06 by mluis-fu         ###   ########.fr       */
+/*   Created: 2022/06/24 22:20:40 by marvin            #+#    #+#             */
+/*   Updated: 2022/06/27 13:07:03 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*alt;
-
-	alt = (t_list *)malloc(sizeof(*alt));
-	if (!alt)
+	if (lst == NULL)
 		return (NULL);
-	alt->content = content;
-	alt->next = NULL;
-	return (alt);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
