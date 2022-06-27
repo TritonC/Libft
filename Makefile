@@ -51,8 +51,8 @@ OBJECTS_BONUS = $(BONUS:.c=.o);
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c $(FUNCTIONS)
+$(NAME): 
+	gcc $(FLAGS) -c $(FUNCTIONS)
 	ar -rc $(NAME) $(OBJECTS)
 
 clean:
@@ -64,6 +64,6 @@ fclean: clean
 re: fclean all
 
 bonus: $(NAME) $(OBJECTS_BONUS)
-	ar rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	ar -rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
 
 .PHONY:	all clean fclean re bonus

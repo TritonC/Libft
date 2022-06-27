@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:39:12 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/27 16:07:25 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:02:53 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst == NULL)
+	if (!del)
 		return ;
-	del(lst->content);
-	free (lst);
+	if (lst)
+	{
+		del(lst->content);
+		free (lst);
+	}
 }
