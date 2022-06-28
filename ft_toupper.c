@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:49:00 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/24 13:36:24 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:23 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,3 @@ int	ft_toupper(int n)
 		n -= 32;
 	return (n);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%c", ft_toupper('A'));
-}*/

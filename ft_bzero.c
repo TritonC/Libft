@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 14:49:23 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:34:40 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:53 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,3 @@ void	*ft_bzero(void *str, size_t size)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char	zero[50] = "ricardo le gusta la pija";
-	ft_bzero(zero, 5);
-	printf("%s", zero);
-	printf("%s", bzero(zero, 5));
-}*/

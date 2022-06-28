@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 12:54:05 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:01 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:41 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,3 @@ int	ft_isdigit(int n)
 		value = 1;
 	return (value);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%d",ft_isdigit('s'));
-}*/

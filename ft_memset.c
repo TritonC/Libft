@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:31:08 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:23 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:06:27 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,3 @@ void	*ft_memset(void *str, int i, size_t size)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char    str[50] = "hola sr ricardo";
-	printf("%s\n", ft_memset(str, '$', 7));
-	printf("%s", memset(str, '$', 7));
-}*/

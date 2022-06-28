@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:13:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/24 13:36:12 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:04 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,3 @@ char	*ft_strrchr(const char *str, int ch)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	const char	test[] = "hola una mas mundo";
-	int		ch = 'u';
-	printf("%s", ft_strrchr(test, ch));
-}*/

@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 16:14:10 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:56 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:06:43 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,3 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	}
 	return (length);
 }
-/*int main(void)
-{
-	char	src[] = "hola42";
-	char	dest[] = "adios42222";
-	printf("%d", ft_strlcpy(dest, src, 5));
-	printf("%s", dest);
-}*/

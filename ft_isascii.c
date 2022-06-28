@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:48:31 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:34:59 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:45 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,3 @@ int	ft_isascii(int n)
 {
 	return ((n >= 0 && n <= 127));
 }
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%d", ft_isascii());
-}*/

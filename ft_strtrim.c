@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 15:55:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/24 13:36:16 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:04:02 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,9 @@ char	*ft_strtrim(const char *str, const char *set)
 		s1len--;
 	aux = ft_substr((char *)str, 0, s1len + 1);
 	return (aux);
+}
+
+int	main(void)
+{
+	printf("%s", ft_strtrim("hola como estas", "hola"));
 }

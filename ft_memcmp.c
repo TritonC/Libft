@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:26:49 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:14 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:06:15 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,4 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-    const char test[] = "somos iguales";
-    const char test2[] = "sOmos iguales";
-    printf("mi desastre: %d\n", ft_memcmp(test, test2, 14));
-    printf("funcion original: %d", memcmp(test, test2, 14));
-}*/
+

@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:01:07 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:42 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:06:36 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ char	*ft_strchr(const char *str, int ch)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char	s[] = {0, 1, 2, 3, 4, 5};
-    printf("%s", ft_strchr(2));
-}*/

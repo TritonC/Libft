@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:46:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/24 13:36:02 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:06:48 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (str);
 }
-/*
-char test (unsigned int i, char c)
-{	
-	i = 0;
-	if (c == ' ')
-		return ('_');
-	return (c);
-}
-int main()
-{
-	char test2[] = "como estas tu?"; // como_estas_tu
-	char *test1;
-	test1 = ft_strmapi(test2, test);
-	printf("%s", test1);
-}*/

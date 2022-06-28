@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 15:13:33 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/27 16:34:50 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:07:59 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,3 @@ int	ft_atoi(const char *str)
 		return (0);
 	return (j * sign);
 }
-/*
-int	main(void)
-{
-	printf("%d", ft_atoi("9223372036854775805"));
-}*/

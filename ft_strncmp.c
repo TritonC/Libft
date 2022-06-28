@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:16:30 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:36:05 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:06:53 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	char a[] = "noasdnjdafsnkdfmkl'dfasm486468";
-	char b[] = "asdasdas";
-	int	c = strncmp(a, b, 0);
-	int d = ft_strncmp(a, b, 0);
-
-	printf("funcion original: %d. \n", c);
-	printf("Mi funcion: %d. \n", d);
-}*/
