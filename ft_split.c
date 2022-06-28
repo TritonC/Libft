@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:53:41 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 13:35:39 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:24:17 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ static size_t	size_words(const char *str, char delimiter, int len)
 	return (size);
 }
 
+void	ft_free(char **str, int i)
+{
+	while (i-- > 0)
+		free (str);
+	free (str);
+	str = NULL;
+}
+
 char	**ft_split(const char *str, char delimiter)
 {
 	char	**split;
@@ -58,11 +66,10 @@ char	**ft_split(const char *str, char delimiter)
 	size_t	count;
 	size_t	len_str;
 
-	size_copy = 0;
 	index = -1;
 	count = 0;
 	len_str = str_index_size(str, delimiter);
-	split = (char **)malloc (sizeof(char *) * (len_str + 1));
+	split = (char **)ft_calloc (sizeof(char *) * (len_str + 1), 1);
 	if (!split)
 		return (NULL);
 	while (++index < len_str)
@@ -72,9 +79,8 @@ char	**ft_split(const char *str, char delimiter)
 		size_copy = size_words(str, delimiter, count);
 		split[index] = ft_substr(str, count, size_copy);
 		if (!split[index])
-			return (NULL);
+			ft_free (split, index);
 		count += size_copy;
 	}
-	split[index] = 0;
 	return (split);
 }
