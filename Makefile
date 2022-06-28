@@ -63,7 +63,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(NAME) $(OBJECTS_BONUS)
+bonus: $(OBJECTS_BONUS)
 	ar -rc $(NAME) $(OBJECTS_BONUS)
 	ranlib $(NAME)
 
