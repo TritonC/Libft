@@ -18,6 +18,8 @@ void	ft_putnbr_fd(int nb, int fd)
 	long int	n;
 
 	n = nb;
+	if (fd < 0)
+		return (NULL);
 	if (n < 0)
 	{
 		write(fd, "-", 1);
