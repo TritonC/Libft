@@ -69,4 +69,4 @@ re: fclean all
 bonus:
 	make "OBJECTS=$(OBJECTS_BONUS)"
 
-.PHONY:	fclean all bonus
+.PHONY:	re clean fclean all bonus
