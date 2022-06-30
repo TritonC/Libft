@@ -6,7 +6,7 @@
 /*   By: mluis-fu <mluis-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:25:57 by mluis-fu          #+#    #+#             */
-/*   Updated: 2022/06/24 16:32:54 by mluis-fu         ###   ########.fr       */
+/*   Updated: 2022/06/30 11:28:12 by mluis-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int nb, int fd)
 
 	n = nb;
 	if (fd < 0)
-		return (NULL);
+		return ;
 	if (n < 0)
 	{
 		write(fd, "-", 1);

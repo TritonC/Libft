@@ -1,5 +1,9 @@
 NAME = libft.a
-FLAGS = -Wall -Werror -Wextra
+
+CC = gcc
+
+CFLAGS = -Wall -Werror -Wextra
+
 FUNCTIONS = ft_putnbr_fd.c \
 			ft_putendl_fd.c \
 			ft_putstr_fd.c \
@@ -51,8 +55,7 @@ OBJECTS_BONUS = $(BONUS:.c=.o);
 
 all: $(NAME)
 
-$(NAME): 
-	gcc $(FLAGS) -c $(FUNCTIONS)
+$(NAME): $(OBJECTS)
 	ar -rc $(NAME) $(OBJECTS)
 
 clean:
@@ -63,8 +66,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJECTS_BONUS)
-	ar -rc $(NAME) $(OBJECTS_BONUS)
-	ranlib $(NAME)
+bonus:
+	make "OBJECTS=$(OBJECTS_BONUS)"
 
 .PHONY:	fclean all bonus
